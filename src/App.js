@@ -9,11 +9,11 @@ function App() {
   const [channel, setChannel] = useState(null);
 
   useEffect(() => {
-    let pusher = new Pusher("771ebd160a78735cc59c", {
+    let pusher = new Pusher("0be31a14ca9048264b1c", {
       cluster: "us2",
     });
 
-    setChannel(pusher.subscribe("my-channel"));
+    setChannel(pusher.subscribe("skyit-demo-channel"));
   }, []);
 
   return (

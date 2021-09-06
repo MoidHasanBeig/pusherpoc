@@ -8,8 +8,19 @@ const CreateMessage = () => {
   };
 
   const handleSubmit = (event) => {
-    setValue("");
     event.preventDefault();
+    fetch(
+      "http://ec2-99-79-193-125.ca-central-1.compute.amazonaws.com/message",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify({ value: value }),
+      }
+    );
+    setValue("");
   };
 
   return (
