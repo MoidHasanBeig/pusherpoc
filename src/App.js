@@ -14,6 +14,8 @@ function App() {
     });
 
     setChannel(pusher.subscribe("skyit-demo-channel"));
+
+    return () => pusher.unsubscribe("skyit-demo-channel");
   }, []);
 
   return (
